@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora CAP - Allianz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <header>
+                <h1><img src="img/allianz-logo.png" width="50%"></h1>
+                <p class="subtitle">Calculadora de Saldo (CAP Aplicado × Cadastrado)</p>
+            </header>
+
+            <div class="form">
+                <div class="form-group">
+                    <label for="premio">Prêmio Total</label>
+                    <input type="text" id="premio" placeholder="R$ 0,00" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="capA">CAP Aplicado (%)</label>
+                    <input type="text" id="capA" placeholder="Ex: 30 ou 0,30">
+                </div>
+
+                <div class="form-group">
+                    <label for="capC">CAP Cadastrado (%)</label>
+                    <input type="text" id="capC" placeholder="Ex: 20 ou 0,20">
+                </div>
+
+                <button id="btnCalcular" class="btn-calc">Calcular Resultado</button>
+            </div>
+
+            <div class="results-section">
+                <div class="result-item">
+                    <p class="result-label">Saldo de Conta Corrente</p>
+                    <div id="resSaldo" class="result-value">—</div>
+                </div>
+
+                <details>
+                    <summary>Ver Detalhamento Técnico</summary>
+                    <div class="details-content">
+
+                        <div class="result-item">
+                            <p class="result-label">Prêmio Líquido (calculado)</p>
+                            <div id="resPremioLiquido" class="result-value">—</div>
+                        </div>
+
+                        <div class="result-item">
+                            <p class="result-label">PEL (CAP Aplicado)</p>
+                            <div id="resPel" class="result-value">—</div>
+                        </div>
+
+                        <div class="result-item">
+                            <p class="result-label">Prêmio C/C</p>
+                            <div id="resPremioCC" class="result-value">—</div>
+                        </div>
+
+                    </div>
+                </details>
+            </div>
+        </main>
+
+        <!-- Coluna Secundária: Histórico -->
+        <aside class="card history-card">
+            <div class="history-header">
+                <h2 style="font-size: 1.1rem; margin: 0;">Histórico</h2>
+                <button id="btnClearHistory" class="btn-clear" title="Apagar todos os registros do histórico"> Limpar</button>
+            </div>
+            
+            <div id="historyList" class="history-list">
+                <!-- Itens do histórico serão inseridos aqui -->
+                <div class="empty-state">Nenhum cálculo realizado ainda.</div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
